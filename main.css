@@ -16,7 +16,6 @@ body {
   width: 100%;
 }
 
-ul {
-  margin-top: 1em;
-  margin-bottom: 1em;
+li:not(:last-child) {
+    margin-bottom: 7px;
 }
