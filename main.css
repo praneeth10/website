@@ -7,7 +7,13 @@ body {
   align : left;
 }
 
+.intro-text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .contact {
+  padding-top: 20px;
   clear: both;
   width: 100%;
 }
