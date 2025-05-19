@@ -3,10 +3,10 @@
     <link rel="stylesheet" href="main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-<body style="background-color:#f5f5f5;">
-  <h1 style="color:blue;">Praneeth Kacham</h1>
+<body>
+  <h1>Praneeth Kacham</h1>
   <div class="intro">
-    <img src="photo.jpg" width="200" height="260" style="float:left; padding-right:10px">
+    <img src="photo.jpg" width="200" height="260" class="profile-photo">
     <div class="intro-text">
 Hello! I am a Research Scientist in the <a href=https://research.google/teams/algorithms-optimization>Algorithms and Optimization team</a> at Google Research NYC. I finished my PhD at Carnegie Mellon University and was advised by Prof. <a href=https://www.cs.cmu.edu/~dwoodruf>David P. Woodruff</a>. Before that, I was an undergrad at IIT Delhi. I am interested in algorithms for all sorts of problems, mainly randomized algorithms for Numerical Linear Algebra and matrix methods in Big Data settings.
 </div>
@@ -30,7 +30,7 @@ Hello! I am a Research Scientist in the <a href=https://research.google/teams/al
 <div class="research">
 <h3>Research</h3>
 <h4>Preprints</h4>
-<ul>
+<ol>
   <li> <b> LevAttention: Time, Space, and Streaming Efficient Algorithm for Heavy Attentions</b> <br>
     with Ravindran Kannan, Chiranjib Bhattacharyya and David P. Woodruff <br>
     <a href=https://arxiv.org/abs/2410.05462>arXiv</a>
@@ -38,9 +38,9 @@ Hello! I am a Research Scientist in the <a href=https://research.google/teams/al
   <li> <b> Differentially Private Vertical Federated Learning Primitives</b> <br>
     with Vincent Cohen-Addad, Vahab Mirrokni and Peilin Zhong
   </li>
-  </ul>
+  </ol>
 <h4>Published</h4>
-<ul>
+<ol>
   <li> <b> Approximating the Top Eigenvector in Random Order Streams </b><br>
     with David P. Woodruff<br>
     NeurIPS 2024. Selected as a spotlight.
@@ -113,8 +113,21 @@ Hello! I am a Research Scientist in the <a href=https://research.google/teams/al
     <a href=https://proceedings.mlr.press/v108/kacham20a.html>AISTATS 2020</a> <a href=presentations/20_aistats_coresets_ridge_regression.pdf>Slides</a>
   </li>
   
-</ul>
+</ol>
 </div>
 Last Updated : November 2024
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const researchLists = document.querySelectorAll('.research ol');
+    let totalPapers = 0;
+    researchLists.forEach(list => {
+      totalPapers += list.querySelectorAll('li').length;
+    });
+    const researchDiv = document.querySelector('.research');
+    if (researchDiv) {
+      researchDiv.style.setProperty('--total-papers-count', totalPapers);
+    }
+  });
+</script>
 </body>
 </html>
